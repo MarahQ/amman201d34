@@ -8,8 +8,8 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
-function sum(a, b) { //eslint-disable-line
-  let total = a + b;
+function sum(a, b, c=0) { //eslint-disable-line
+  let total = a + b+ c;
   return [total,  `The sum of ${a} and ${b} is ${total}.`];
 }
 
@@ -27,8 +27,8 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a, b) { //eslint-disable-line
-    let product = a*b;
+function multiply(a, b, c=1) { //eslint-disable-line
+    let product = a*b*c;
   return[product,`The product of ${5} and ${9} is ${product}.`]
 }
 
@@ -52,9 +52,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c){//eslint-disable-line
- let summ = sum((a, b)[0], c[0]);
- let mult = multiply((a, b)[0], c[0]);
-  return [summ, mult, `${a} and ${b} and ${c} sum to 16.`, `The product of ${a} and ${b} and ${c} is ${mult}.`]
+ let summ = sum(a, b, c)[0];
+ let mult = multiply(a, b, c)[0];
+ console.log(summ);
+ console.log(mult);
+ return[summ, mult,`${a} and ${b} and ${c} sum to ${summ}.`,`The product of ${a} and ${b} and ${c} is ${mult}.`]
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -78,8 +80,11 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-  sum =[];
-return[`${2},${3},${4} was passed in as an array of numbers, and ${sum} is their sum.`]
+  let summ1 =sumArr [0];
+  let summ2 =sumArr[1];
+  let summ3 =sumArr[2];
+  let summArray = sum (summ1, summ2, summ3)[0];
+return[`${a},${b},${c} was passed in as an array of numbers, and ${sum} is their sum.`]
 }
 
 // Here is the test for sumArray(); uncomment it to run it
